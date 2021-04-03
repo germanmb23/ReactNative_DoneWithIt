@@ -10,6 +10,8 @@ import {
   Alert,
 } from 'react-native';
 
+import AppText from './app/components/AppText';
+
 export default function App() {
   return (
     <View
@@ -19,24 +21,10 @@ export default function App() {
         alignItems: 'center',
       }}
     >
-      <Text
-        style={{
-          fontFamily: 'Roboto',
-          fontStyle: 'italic',
-          fontWeight: '600',
-          fontSize: 30,
-          color: 'tomato',
-          textTransform: 'capitalize',
-          textDecorationLine: 'underline',
-          textAlign: 'center',
-          lineHeight: 30,
-        }}
-      >
+      <AppText>
         I Love React Native! I Love React Native! I Love React Native!
         I Love React Native!
-      </Text>
+      </AppText>
     </View>
   );
 }
-
-//https://docs.expo.io/guides/using-custom-fonts/
