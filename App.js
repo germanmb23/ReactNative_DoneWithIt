@@ -19,32 +19,24 @@ export default function App() {
         alignItems: 'center',
       }}
     >
-      <View
+      <Text
         style={{
-          backgroundColor: 'dodgerblue',
-          width: 100,
-          height: 100,
-          margin: 20,
-          paddingHorizontal: 10,
-          paddingLeft: 30,
+          fontFamily: 'Roboto',
+          fontStyle: 'italic',
+          fontWeight: '600',
+          fontSize: 30,
+          color: 'tomato',
+          textTransform: 'capitalize',
+          textDecorationLine: 'underline',
+          textAlign: 'center',
+          lineHeight: 30,
         }}
       >
-        <View
-          style={{
-            backgroundColor: 'gold',
-            width: 50,
-            height: 50,
-          }}
-        ></View>
-      </View>
-      <View
-        style={{
-          backgroundColor: 'tomato',
-          width: 100,
-          height: 100,
-          margin: 20,
-        }}
-      />
+        I Love React Native! I Love React Native! I Love React Native!
+        I Love React Native!
+      </Text>
     </View>
   );
 }
+
+//https://docs.expo.io/guides/using-custom-fonts/
