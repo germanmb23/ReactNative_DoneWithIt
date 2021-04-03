@@ -1,0 +1,33 @@
+React Native is a framework for building native apps (not web apps) for iOS and Android using javascript, React Native let share apps between iOS and Android.
+
+Expo is a set of tools and framework that sits on top of react an hides a los of complexity from us.
+
+Prettier
+Matterial Icon Theme
+ES7 React/Redux/GraphQL/React-Native snippets
+
+
+
+
+ctl + P, format document, Prettier
+
+Commands
+expo init DoneWithIt
+
+This
+export ANDROID_SDK=/home/german/Android/Sdk
+export PATH=${PATH}:/home/german/Android/Sdk/tools:/home/german/Android/Sdk/pla>
+
+Alternatives
+export PATH=$PATH:$HOME"/android-sdk-linux/platform-tools"
+
+export PATH=$PATH:$HOME"/Android/Sdk/platform-tools"
+
+export PATH=/home/[myusername]/android-sdk-linux/platform-tools:$PATH
+
+.bash_profile
+export ANDROID_SDK=/home/german/Android/Sdk
+export PATH=~/Library/Android/sdk/tools:$PATH
+export PATH=~/Library/Android/sdk/platform-tools:$PATH
+export PATH=~/Library/Android/sdk/platform-tools:/usr/local/sbin:/usr/local/bin>
+export ANDROID_SDK=/home/german/Android/Sdk
