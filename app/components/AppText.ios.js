@@ -14,7 +14,7 @@ function AppText({children}) {
 
 const styles = StyleSheet.create({
     text:{
-    color: 'tomato',
+    color: 'dodgerblue',
     fontSize: 20,
     fontFamily: 'Avenir',
 }

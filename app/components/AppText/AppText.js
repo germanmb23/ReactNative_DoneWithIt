@@ -1,6 +1,7 @@
 import React from 'react';
+import { Text} from 'react-native';
 
-import { Text, StyleSheet, Platform} from 'react-native';
+import styles from './styles'
 
 function AppText({children}) {
     return (
@@ -9,15 +10,5 @@ function AppText({children}) {
         </Text>
     );
 }
-
-
-
-const styles = StyleSheet.create({
-    text:{
-    color: 'green',
-    fontSize: 18,
-    fontFamily: 'Roboto',
-}
-})
 
 export default AppText;
