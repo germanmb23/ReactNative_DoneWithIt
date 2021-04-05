@@ -13,7 +13,11 @@ import Icon from './app/components/Icon';
 export default function App() {
   return (
     <Screen>
-      <Icon name="email" size={100} />
+      <ListItem
+        title="My title"
+        subTitle="My subtitle"
+        ImageComponent={<Icon name="email" />}
+      />
     </Screen>
   );
 }

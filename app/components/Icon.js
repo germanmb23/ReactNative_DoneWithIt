@@ -6,7 +6,7 @@ function Icon({
   name,
   size = 40,
   backgroundColor = '#000',
-  iconColor = '#fff',
+  iconColor = 'white',
 }) {
   return (
     <View
