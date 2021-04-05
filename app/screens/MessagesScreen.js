@@ -1,13 +1,9 @@
 import React from 'react';
-import {
-  FlatList,
-  SafeAreaView,
-  View,
-  StyleSheet,
-} from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
+//import Constants from 'expo-constants';
 
-import AppText from '../components/AppText';
 import ListItem from '../components/ListItem';
+import Screen from '../components/Screen';
 
 const messages = [
   {
@@ -19,14 +15,14 @@ const messages = [
   {
     id: 2,
     title: 'T2',
-    description: 'Dsdcdsc2',
+    description: 'D2',
     image: require('../../assets/mosh.jpg'),
   },
 ];
 
 function MessagesScreen(props) {
   return (
-    <SafeAreaView style={styles.screen}>
+    <Screen>
       <FlatList
         data={messages}
         keyExtractor={(message) => message.id.toString()}
@@ -38,14 +34,15 @@ function MessagesScreen(props) {
           />
         )}
       />
-    </SafeAreaView>
+    </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  screen: {
-    paddingTop: 0,
-  },
+  //screen: {
+  //paddingTop: Constants.statusBarHeight,
+  //paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+  //},
 });
 
 export default MessagesScreen;
