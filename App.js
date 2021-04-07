@@ -12,18 +12,16 @@ import Icon from './app/components/Icon';
 import AccountScreen from './app/screens/AccountScreen';
 import ListingScreen from './app/screens/ListingScreen';
 import AppTextInput from './app/components/AppTextInput';
+import AppPicker from './app/components/AppPicker';
 
 export default function App() {
   const [firstName, setFirstName] = useState('');
-
   const [isNew, setIsNew] = useState(false);
 
   return (
     <Screen>
-      <Switch
-        value={isNew}
-        onValueChange={(newValue) => setIsNew(newValue)}
-      />
+      <AppPicker icon="apps" placeholder="Category"></AppPicker>
+      <AppTextInput icon="email" placeholder="Email" />
     </Screen>
   );
 }
