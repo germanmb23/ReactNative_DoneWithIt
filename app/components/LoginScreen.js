@@ -27,28 +27,37 @@ function LoginScreen(props) {
         onSubmit={(values) => console.log(values)}
         validationSchema={valdationSchema}
       >
-        {({ handleChange, handleSubmit, errors }) => (
+        {({
+          handleChange,
+          handleSubmit,
+          errors,
+          setFieldTouched,
+          touched,
+        }) => (
           <>
             <AppTextInput
               autoCapitalize="none"
               autoCorrect={false}
               icon="email"
               keyboartType="email-adress"
+              onBlur={() => setFieldTouched('email')}
               onChangeText={handleChange('email')}
               placeholder="Email"
               //textContentType="emailAdress"
             />
-            <ErrorMessage error={errors.email} />
+            {/*touched.email && <ErrorMessage error={errors.email}/>*/}
+            <ErrorMessage visible={true} error={touched.email} />
             <AppTextInput
               autoCapitalize="none"
               autoCorrect={false}
               icon="lock"
               placeholder="Password"
+              onBlur={() => setFieldTouched('password')}
               onChangeText={handleChange('password')}
               secureTextEntry
               //textContentType="password"
             />
-            <ErrorMessage error={errors.password} />
+            <ErrorMessage visible={true} error={touched.password} />
             <AppButton title="login" onPress={handleSubmit} />
           </>
         )}
