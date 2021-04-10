@@ -29,6 +29,9 @@ export PATH=/home/[myusername]/android-sdk-linux/platform-tools:$PATH
 //rsf
 //rnss
 
+Forms
+formik
+
 CSS
 justify-content: Horizontal
 align-items: Vertical
