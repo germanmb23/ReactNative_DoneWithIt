@@ -2,6 +2,7 @@ React Native is a framework for building native apps (not web apps) for iOS and 
 
 Expo is a set of tools and framework that sits on top of react an hides a los of complexity from us.
 
+Plugins
 Prettier
 Matterial Icon Theme
 ES7 React/Redux/GraphQL/React-Native snippets
@@ -24,6 +25,21 @@ export PATH=$PATH:$HOME"/android-sdk-linux/platform-tools"
 export PATH=$PATH:$HOME"/Android/Sdk/platform-tools"
 
 export PATH=/home/[myusername]/android-sdk-linux/platform-tools:$PATH
+
+//rsf
+//rnss
+
+CSS
+justify-content: Horizontal
+align-items: Vertical
+
+align-items: ubica los items individualmente en cada fila,
+The align-items property specifies the default alignment for items inside the flexible container.
+
+align-content: ubica los items de en la fila como un todo (wrap) 
+
+Las propiedades de flex funcionan solo si el contenedor es flexible
+flex, flex-wrap
 
 .bash_profile
 export ANDROID_SDK=/home/german/Android/Sdk
