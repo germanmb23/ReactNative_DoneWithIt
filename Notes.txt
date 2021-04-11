@@ -44,6 +44,9 @@ align-content: ubica los items de en la fila como un todo (wrap)
 Las propiedades de flex funcionan solo si el contenedor es flexible
 flex, flex-wrap
 
+Create a code snippets (shorcut to a initial structure of code)
+File > Preferences > User snippets
+
 .bash_profile
 export ANDROID_SDK=/home/german/Android/Sdk
 export PATH=~/Library/Android/sdk/tools:$PATH
