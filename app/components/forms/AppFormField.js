@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormikContext } from 'formik';
 
-import AppTextInput from './AppTextInput';
+import AppTextInput from '../AppTextInput';
 import ErrorMessage from './ErrorMessage';
 
 function AppFormField({ name, ...otherPops }) {
@@ -18,8 +18,6 @@ function AppFormField({ name, ...otherPops }) {
         onChangeText={handleChange(name)}
         {...otherPops}
       />
-      {console.log('aaaaaaa')}
-
       <ErrorMessage visible={touched[name]} error={errors[name]} />
     </>
   );

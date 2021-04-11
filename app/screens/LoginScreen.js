@@ -7,6 +7,7 @@ import {
   AppFormField,
   SubmitButton,
   AppForm,
+  AppFormPicker,
 } from '../components/forms';
 
 const valdationSchema = Yup.object().shape({

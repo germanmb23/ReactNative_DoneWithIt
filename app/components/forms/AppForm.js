@@ -11,7 +11,7 @@ function AppForm({
     <Formik
       initialValues={{ initialValues }}
       onSubmit={onSubmit}
-      validationSchema={valdationSchema}
+      validationSchema={validationSchema}
     >
       {() => <>{children}</>}
     </Formik>
