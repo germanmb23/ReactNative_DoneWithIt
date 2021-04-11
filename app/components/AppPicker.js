@@ -23,6 +23,7 @@ function AppPicker({
   placeholder,
   selectedItem,
   width = '100%',
+  PickerItemComponent = PickerItem,
 }) {
   const [modalVisible, setModalvisible] = useState(false);
 
@@ -66,7 +67,7 @@ function AppPicker({
             data={items}
             keyExtractor={(item) => item.value.toString()}
             renderItem={({ item }) => (
-              <PickerItem
+              <PickerItemComponent
                 label={item.label}
                 onPress={() => {
                   setModalvisible(false);
