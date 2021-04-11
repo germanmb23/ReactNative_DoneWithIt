@@ -1,12 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
-import { Switch, Text, TextInput, View } from 'react-native';
-import AppFormPicker from './app/components/forms/AppFormPicker';
-import ListingEditScreen from './app/screens/ListingEditScreen';
-import MessagesScreen from './app/screens/MessagesScreen';
-
-import LoginScreen from './app/screens/LoginScreen';
+import React, { useEffect } from 'react';
+import * as ImagePicker from 'expo-image-picker';
+import Screen from './app/components/Screen';
 
 export default function App() {
-  return <ListingEditScreen></ListingEditScreen>;
+  const requestPermission = async () => {
+    const result = await ImagePicker.requestCameraRollPermissionsAsync();
+    if (!result.granted) alert('You need to enabke permission acess');
+  };
+
+  useEffect(() => {
+    requestPermission();
+  }, []);
+
+  return <Screen></Screen>;
 }

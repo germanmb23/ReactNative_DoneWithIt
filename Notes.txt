@@ -53,3 +53,9 @@ export PATH=~/Library/Android/sdk/tools:$PATH
 export PATH=~/Library/Android/sdk/platform-tools:$PATH
 export PATH=~/Library/Android/sdk/platform-tools:/usr/local/sbin:/usr/local/bin>
 export ANDROID_SDK=/home/german/Android/Sdk
+
+arrow function
+
+spread operator
+
+expo install expo-image-picker
