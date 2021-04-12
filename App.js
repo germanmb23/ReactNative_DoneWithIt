@@ -4,6 +4,7 @@ import * as Permissions from 'expo-permissions';
 
 import Screen from './app/components/Screen';
 import { Button, Image } from 'react-native';
+import ImageIput from './app/components/ImageIput';
 
 export default function App() {
   const [imageUri, setImageUri] = useState();
@@ -37,6 +38,7 @@ export default function App() {
         source={{ uri: imageUri }}
         style={{ width: 200, height: 200 }}
       />
+      <ImageIput imageUri={imageUri} />
     </Screen>
   );
 }
