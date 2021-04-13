@@ -3,30 +3,29 @@ import * as Permissions from 'expo-permissions';
 
 import Screen from './app/components/Screen';
 import { Button, Image } from 'react-native';
-import ImageIput from './app/components/ImageIput';
+import ImageIput from './app/components/ImageInput';
+import WelcomeScreen from './app/screens/WelcomeScreen';
+import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
+import ImageInputList from './app/components/ImageInputList';
 
 export default function App() {
-  const [imageUri, setImageUri] = useState();
+  const [imageUris, setImageUris] = useState([]);
 
-  const requestPermission = async () => {
-    //const await = await  Permissions.askAsync(Permissions.CAMERA_ROLL, Permissions.LOCATION)
-    //result.granted
-    //true is the user accept all permissions
-
-    const result = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (!result.granted) alert('You need to enabke permission acess');
+  const handleAdd = (uri) => {
+    setImageUris([...imageUris, uri]);
   };
 
-  useEffect(() => {
-    requestPermission();
-  }, []);
+  const handleRemove = (uri) => {
+    setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
+  };
 
   return (
     <Screen>
-      <ImageIput
-        imageUri={imageUri}
-        onChangeImage={(uri) => setImageUri(uri)}
-      />
+      <ImageInputList
+        imageUris={imageUris}
+        onAddImage={handleAdd}
+        onRemoveImage={handleRemove}
+      ></ImageInputList>
     </Screen>
   );
 }

@@ -47,6 +47,10 @@ flex, flex-wrap
 Create a code snippets (shorcut to a initial structure of code)
 File > Preferences > User snippets
 
+
+onRemoveImage={handleRemove}  ==  onRemoveImage={uri => handleRemove(uri)}
+
+
 .bash_profile
 export ANDROID_SDK=/home/german/Android/Sdk
 export PATH=~/Library/Android/sdk/tools:$PATH
