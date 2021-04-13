@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import * as Yup from 'yup';
-import CategoryPickerItem from '../components/CategoryPickerItem';
+import * as Location from 'expo-location';
 
+import CategoryPickerItem from '../components/CategoryPickerItem';
 import {
   AppForm as Form,
   AppFormField as FormField,
@@ -77,7 +78,20 @@ const categories = [
 ];
 
 function ListingEditScreen() {
-  //const location = useLocation();
+  const [location, setLocation] = useState();
+
+  const getLocation = async () => {
+    const granted = await Location.requestPermissionsAsync();
+    if (!granted) return;
+    const {
+      coords: { latitude, longitude },
+    } = await Location.getLastKnownPositionAsync();
+    setLocation({ latitude, longitude });
+  };
+
+  useEffect(() => {
+    getLocation();
+  }, []);
 
   return (
     <Screen style={styles.container}>
@@ -89,7 +103,7 @@ function ListingEditScreen() {
           category: null,
           images: [],
         }}
-        //onSubmit={(values) => console.log(location)}
+        onSubmit={(values) => console.log(location)}
         validationSchema={validationSchema}
       >
         <FormImagePicker name="images" />
@@ -109,7 +123,7 @@ function ListingEditScreen() {
           placeholder="Category"
           width="50%"
         />
-        <Form
+        <FormField
           maxLength={255}
           multiline
           name="description"
