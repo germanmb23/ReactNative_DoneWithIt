@@ -9,7 +9,7 @@ function AppForm({
 }) {
   return (
     <Formik
-      initialValues={{ initialValues }}
+      initialValues={initialValues}
       onSubmit={onSubmit}
       validationSchema={validationSchema}
     >

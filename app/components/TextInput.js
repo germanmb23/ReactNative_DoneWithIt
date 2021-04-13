@@ -3,6 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import defaultStyles from '../config/styles';
+import { TextInput } from 'react-native-gesture-handler';
 
 function AppTextInput({ icon, width = '100%', ...otherProps }) {
   return (

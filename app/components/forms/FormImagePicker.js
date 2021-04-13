@@ -1,18 +1,17 @@
-import { ErrorMessage, useFormikContext } from 'formik';
 import React from 'react';
+import { useFormikContext } from 'formik';
 
-import { View, StyleSheet } from 'react-native';
+import ErrorMessage from './ErrorMessage';
 import ImageInputList from '../ImageInputList';
 
-function FormaImagePicker(props) {
+function FormImagePicker({ name }) {
   const {
     errors,
     setFieldValue,
     touched,
     values,
   } = useFormikContext();
-
-  const imageUris = imageUris;
+  const imageUris = values[name];
 
   const handleAdd = (uri) => {
     setFieldValue(name, [...imageUris, uri]);
@@ -37,8 +36,4 @@ function FormaImagePicker(props) {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {},
-});
-
-export default FormaImagePicker;
+export default FormImagePicker;
