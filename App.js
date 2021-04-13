@@ -1,14 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import * as Permissions from 'expo-permissions';
+import React from 'react';
+import { Text } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 
 import Screen from './app/components/Screen';
-import { Button, Image } from 'react-native';
-import ImageIput from './app/components/ImageInput';
-import WelcomeScreen from './app/screens/WelcomeScreen';
-import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
-import ImageInputList from './app/components/ImageInputList';
-import ListingEditScreen from './app/screens/ListingEditScreen';
+
+const Tweets = () => (
+  <Screen>
+    <Text>Tweets</Text>
+  </Screen>
+);
+
+const TweetDetails = () => (
+  <Screen>
+    <Text>Tweet Details</Text>
+  </Screen>
+);
+
+const Stack = createStackNavigator();
+const StackNavigator = () => (
+  <Stack.Navigator initialRouteName="Tweets">
+    <Stack.Screen name="Tweets" component={Tweets} />
+    <Stack.Screen name="TweetDetails" component={TweetDetails} />
+  </Stack.Navigator>
+);
 
 export default function App() {
-  return <ListingEditScreen />;
+  return (
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
+  );
 }
