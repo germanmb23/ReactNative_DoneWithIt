@@ -9,6 +9,7 @@ import {
 } from '@react-navigation/native';
 
 import Screen from './app/components/Screen';
+import AuthNaviator from './app/navigation/AuthNavigator';
 
 const Link = () => {
   const navigation = useNavigation();
@@ -95,7 +96,7 @@ const TabNavigator = () => (
 export default function App() {
   return (
     <NavigationContainer>
-      <TabNavigator />
+      <AuthNaviator />
     </NavigationContainer>
   );
 }

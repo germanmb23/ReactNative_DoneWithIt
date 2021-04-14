@@ -1,57 +1,62 @@
 import React from 'react';
 import {
-  Image,
   ImageBackground,
-  StyleSheet,
   View,
+  StyleSheet,
+  Image,
   Text,
 } from 'react-native';
 
-function WelcomeScreen(props) {
+import AppButton from '../components/AppButton';
+
+const WelcomeScreen = ({ navigation }) => {
   return (
     <ImageBackground
-      style={styles.background}
       source={require('../assets/background.jpg')}
+      style={styles.background}
+      blurRadius={10}
     >
       <View style={styles.logoContainer}>
         <Image
-          style={styles.logo}
           source={require('../assets/logo-red.png')}
+          style={styles.logo}
         />
-        <Text>Sell What You Don't Need</Text>
+        <Text style={styles.logoText}>Sell What You Don't Need</Text>
       </View>
-
-      <View style={styles.loginButton}></View>
-      <View style={styles.registerButton}></View>
+      <AppButton
+        text="Login"
+        onPress={() => navigation.navigate('Login')}
+      />
+      <AppButton
+        text="Register"
+        color="secondary"
+        onPress={() => navigation.navigate('Register')}
+      />
     </ImageBackground>
   );
-}
+};
+
+export default WelcomeScreen;
 
 const styles = StyleSheet.create({
   background: {
     flex: 1,
     justifyContent: 'flex-end',
     alignItems: 'center',
-  },
-  loginButton: {
-    width: '100%',
-    height: 70,
-    backgroundColor: '#fc5c65',
-  },
-  registerButton: {
-    width: '100%',
-    height: 70,
-    backgroundColor: '#4ecdc4',
+    padding: 20,
   },
   logo: {
-    width: 100,
     height: 100,
+    width: 100,
   },
   logoContainer: {
     position: 'absolute',
     top: 70,
     alignItems: 'center',
   },
+  logoText: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    marginTop: 20,
+  },
 });
-
-export default WelcomeScreen;
