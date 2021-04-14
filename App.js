@@ -10,6 +10,7 @@ import {
 
 import Screen from './app/components/Screen';
 import AuthNaviator from './app/navigation/AuthNavigator';
+import navigationTheme from './app/navigation/navigationTheme';
 
 const Link = () => {
   const navigation = useNavigation();
@@ -95,7 +96,7 @@ const TabNavigator = () => (
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={navigationTheme}>
       <AuthNaviator />
     </NavigationContainer>
   );
