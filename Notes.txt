@@ -63,3 +63,8 @@ arrow function
 spread operator
 
 expo install expo-image-picker
+
+expo-location
+
+reactnavigation.org
+
