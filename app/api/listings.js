@@ -4,7 +4,7 @@ const endpoint = '/listings';
 
 const getListings = () => client.get(endpoint);
 
-const addListing = (listings) => {
+const addListing = (listings, onUploadProgress) => {
   const data = new FormData();
   data.append('title', listings.title);
   data.append('price', listings.price);
@@ -21,7 +21,10 @@ const addListing = (listings) => {
   if (listings.location)
     data.append('location', JSON.stringify(listings.location));
 
-  return client.post(endpoint, data);
+  return client.post(endpoint, data, {
+    onUploadProgress: (progress) =>
+      onUploadProgress(progress.loaded / progress.total),
+  });
 };
 
 export default {
