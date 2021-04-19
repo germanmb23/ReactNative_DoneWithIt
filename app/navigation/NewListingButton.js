@@ -7,7 +7,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 function NewListingButton({ onPress }) {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={onPress} /*activeOpacity={0.8}*/>
       <View style={styles.container}>
         <MaterialCommunityIcons
           name="plus-circle"
