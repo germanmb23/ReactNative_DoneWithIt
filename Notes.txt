@@ -70,4 +70,7 @@ reactnavigation.org
 
 npm i apisauce
 
-react-native-debugger --- Tool for debigging
+react-native-debugger --- 
+
+lottiefiles.com
+expo install lottie-react-native
