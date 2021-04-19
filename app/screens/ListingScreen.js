@@ -8,9 +8,12 @@ import routes from '../navigation/routes';
 import listingsApi from '../api/listings';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import AppText from '../components/AppText';
+import AppButton from '../components/AppButton';
 
 function ListingScreen({ navigation }) {
   const [listings, setListings] = useState([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     loadListings();
@@ -18,11 +21,20 @@ function ListingScreen({ navigation }) {
 
   const loadListings = async () => {
     const response = await listingsApi.getListings();
+    if (!response.ok) return setError(true);
+
+    setError(false);
     setListings(response.data);
   };
 
   return (
     <Screen style={styles.screen}>
+      {error && (
+        <>
+          <AppText>Couldn't retrieve the listings.</AppText>
+          <AppButton text="Retry" onPress={loadListings} />
+        </>
+      )}
       <FlatList
         data={listings}
         keyExtractor={(listings) => listings.id.toString()}

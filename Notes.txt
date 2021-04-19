@@ -68,3 +68,6 @@ expo-location
 
 reactnavigation.org
 
+npm i apisauce
+
+react-native-debugger --- Tool for debigging
