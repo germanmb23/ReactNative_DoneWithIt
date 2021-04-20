@@ -74,3 +74,5 @@ react-native-debugger ---
 
 lottiefiles.com
 expo install lottie-react-native
+
+react-native-progress
